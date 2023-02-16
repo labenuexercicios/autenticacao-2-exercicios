@@ -1,6 +1,6 @@
-# Exercício da tarde - Autenticação II
+# Exercício - Autenticação II
 
-<strong>A partir dessa semana os exercícios da tarde voltam a ser independentes. Não se preocupe em centralizá-los em um mesmo repo.</strong>
+<strong>A partir dessa semana os exercícios voltam a ser independentes. Não se preocupe em centralizá-los em um mesmo repo.</strong>
 <br><br>
 Utilize esse template para criar um repo pessoal na sua conta e trabalhe nele.
 
