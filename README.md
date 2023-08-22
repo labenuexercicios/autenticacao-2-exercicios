@@ -10,7 +10,7 @@ O exercício de hoje pode parecer repetitivo comparado às práticas da aula, ma
 
 ### Exercício 1
 
-Proteja o endpoint GET /users obrigando uma auntenticação pelo o envio de token.
+Proteja o endpoint GET /users obrigando uma autenticação pelo o envio de token.
 
 ### Exercício 2
 
