@@ -2,10 +2,9 @@ import z from "zod"
 import { UserModel } from "../models/User"
 
 export interface GetUsersInputDTO {
-  q: string
+  q?: string
 }
 
-// UserModel é a estrutura de User que será devolvida para o Front (sem password)
 export type GetUsersOutputDTO = UserModel[]
 
 export const GetUsersSchema = z.object({

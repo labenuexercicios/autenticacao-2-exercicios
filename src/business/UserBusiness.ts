@@ -43,16 +43,8 @@ export class UserBusiness {
   public signup = async (
     input: SignupInputDTO
   ): Promise<SignupOutputDTO> => {
-    // const { id, name, email, password } = input
     const { name, email, password } = input
 
-    // const userDBExists = await this.userDatabase.findUserById(id)
-
-    // if (userDBExists) {
-    //   throw new BadRequestError("'id' já existe")
-    // }
-
-    console.log(this)
     const id = this.idGenerator.generate()
 
     const newUser = new User(
@@ -60,21 +52,19 @@ export class UserBusiness {
       name,
       email,
       password,
-      USER_ROLES.NORMAL, // só é possível criar users com contas normais
+      USER_ROLES.NORMAL,
       new Date().toISOString()
     )
 
     const newUserDB = newUser.toDBModel()
     await this.userDatabase.insertUser(newUserDB)
 
-    // modelagem do payload do token
     const tokenPayload: TokenPayload = {
       id: newUser.getId(),
       name: newUser.getName(),
       role: newUser.getRole()
     }
 
-    // criação do token
     const token = this.tokenManager.createToken(tokenPayload)
 
     const output: SignupOutputDTO = {
@@ -109,14 +99,12 @@ export class UserBusiness {
       userDB.created_at
     )
 
-    // modelagem do payload do token
     const tokenPayload: TokenPayload = {
       id: user.getId(),
       name: user.getName(),
       role: user.getRole()
     }
 
-    // criação do token
     const token = this.tokenManager.createToken(tokenPayload)
 
     const output: LoginOutputDTO = {
